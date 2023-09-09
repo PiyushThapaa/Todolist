@@ -12,12 +12,17 @@
       crossorigin="anonymous"
     />
     <style>
-      #input {
+      #input,#buttons {
         display: flex;
+        justify-content: center;
+        gap: 6px;
       }
       #cont {
         background-color: rgb(122, 212, 122);
         padding-left: 100px;
+      }
+      #todo {
+        width: 43%;
       }
     </style>
   </head>
@@ -31,17 +36,20 @@
       <div id="edited"></div>
       <br />
       <div id="input">
-        &nbsp;&nbsp;<input
+        <input
           type="text"
           name="todo"
           id="todo"
-          size="50"
+          size="70"
           placeholder="Type here..."
-        />&nbsp;&nbsp;
+        />
         <div id="editbtn"></div>
-        &nbsp;&nbsp;<button type="button" class="btn btn-success" id="add">
-          Add
-        </button>&nbsp;&nbsp;<button type="button" class="btn btn-danger" onclick = "deleteall()">Delete All</button>
+        <div id="buttons">
+          <button type="button" class="btn btn-success sm" id="add">Add</button
+          ><button type="button" class="btn btn-danger" onclick="deleteall()">
+            Delete All
+          </button>
+        </div>
       </div>
       <br /><br />
       <table class="table" id="mytable">

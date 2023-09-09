@@ -3,6 +3,7 @@ let input = document.getElementById('todo');
 let content = document.getElementById('mybody');
 let add = document.getElementById('add');
 let deleteAll = document.getElementById('input');
+let buttons = document.getElementById('buttons');
 
 
 let storing = () => {
@@ -68,11 +69,13 @@ let pageload = () => {
     }
 }
 function edited(index) {
+    buttons.style.display = 'none';
     input.value = Arr[index];
     let editbtn = document.getElementById('editbtn');
     editbtn.innerHTML = `<button class="btn btn-warning" id="edit">Edit</button>`
     let edit = document.getElementById('edit');
     edit.addEventListener('click', () => {
+        buttons.style.display = 'flex';
         Arr.splice(index, 1, input.value);
         updateUI();
         updateStorage();
